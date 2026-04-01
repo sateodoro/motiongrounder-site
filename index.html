@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>MotionGrounder</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect y=%2290%22 width=%22100%22 height=%2210px%22 fill=%22%238AC926%22 /><text y=%22.8em%22 x=%225%22 font-size=%2280%22 fill=%22%23FF595E%22>🏃‍♂️</text></svg>">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+<!-- Title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span style="display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin-right: -5px; margin-bottom: 5px;">
+              <span style="font-size: 1.75em; color: rgb(255, 89, 94); line-height: 1;">🏃‍♂️</span>
+              <hr style="width: 90%; height: 6px; background-color: rgb(138, 201, 38); margin: 0; border: none; border-radius: 2px;">
+            </span>
+
+            <span style="font-weight: 900; font-size: 1.25em; vertical-align: middle;">
+              <span style="color: rgb(255, 89, 94);">Motion</span><span style="color: rgb(255, 202, 58);">Grounder</span>:
+            </span> <br>
+
+            <span style="font-weight: 600; display: block; margin-top: 10px;">
+              Grounded Multi-Object Motion<br>
+              Transfer via Diffusion Transformer
+            </span>
+          </h1>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=-W-_ROYAAAAJ&hl">Samuel Teodoro</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=vAUNfCcAAAAJ&hl">Yun Chen</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://agusgun.github.io">Agus Gunawan</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a><sup><img src="./static/images/adobe.png" width="19"></sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/ozbro">Jihyong Oh</a><sup>&#8224;,<img src="./static/images/cau_aff.png" width="19"></sup>&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a target="_blank" rel="noopener noreferrer" href="https://viclab.kaist.ac.kr/professor">Munchurl Kim</a><sup>&#8224;,<img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup><img src="./static/images/kaist_aff.png" width="27"></sup>VICLab, KAIST, South Korea</span> &nbsp;&nbsp;
+            <span class="author-block"><sup><img src="./static/images/adobe.png" width="19"></sup> Adobe Research, California</span> &nbsp;&nbsp;
+            <span class="author-block"><sup><img src="./static/images/cau_aff.png" width="19"></sup>CMLab, Chung-Ang University, South Korea</span> &nbsp;&nbsp;
+            <span class="eql-cntrb"><br><sup>&#8224;</sup>Co-Corresponding Authors</span>
+          </div>
+
+          <div style="margin-top: 10px; display: flex; justify-content: center; align-items: center;">
+            <img src="./static/images/viclab_logo.png" width="155" style="margin-right: 35px;">
+            <img src="./static/images/kaist_logo.png" width="130" style="margin-right: 40px;">
+            <img src="./static/images/adobe_logo.png" width="150" style="margin-right: 15px;">
+            <img src="./static/images/cmlab_logo.png" width="170" style="margin-right: 2px;">
+            <img src="./static/images/cau_logo.png" width="200">
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/YOUR REPO HERE" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (To be released)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Title -->
+
+<!-- Teaser video -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="text-align: center;">
+
+      <p class="content has-text-justified">
+        <strong>MotionGrounder</strong> is a Diffusion Transformer-based framework
+        that transfers motion from reference videos to newly synthesized videos with explicit object
+        grounding, enabling object-consistent motion transfer with structural and
+        appearance changes in a training-free, zero-shot manner.
+      </p>
+
+      <video
+        id="tree"
+        preload="auto"
+        autoplay
+        muted
+        loop
+        controls
+        playsinline
+        style="width: 100%; height: auto; max-height: 600px;"
+      >
+        <source src="./static/videos/page_teaser.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+  </div>
+</section>
+<!--/ Teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Motion transfer enables controllable video generation by transferring temporal
+            dynamics from a reference video to synthesize a new video conditioned on a target caption.
+            However, existing Diffusion Transformer (DiT)–based methods are limited to single-object
+            videos, restricting fine-grained control in real-world scenes with multiple objects.
+            In this work, we introduce <strong>MotionGrounder</strong>, a DiT-based framework that
+            <i>firstly</i> handles motion transfer with <i>multi-object controllability</i>.
+            Our <strong>Flow-based Motion Signal (FMS)</strong> in MotionGrounder provides a stable motion prior
+            for target video generation, while our <strong>Object-Caption Alignment Loss (OCAL)</strong> grounds
+            object captions to their corresponding spatial regions.
+            We further propose a <i>new</i> <strong>Object Grounding Score (OGS)</strong>, which jointly evaluates
+            (i) spatial alignment between source video objects and their generated counterparts and
+            (ii) semantic consistency between each generated object and its target caption.
+            Our experiments show that MotionGrounder consistently outperforms recent baselines
+            across quantitative, qualitative, and human evaluations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Paper abstract -->
+
+<!-- Motivation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Motivation</h2>
+
+        <div class="content has-text-justified">
+
+          <p>
+            Existing motion transfer methods struggle with multi-object dynamics, often relying
+            on costly inversion processes or lacking explicit grounding between objects
+            and their corresponding target captions.
+            While recent DiT-based approaches offer zero-shot capabilities, current
+            patch trajectory-based methods (PTBM) extract noisy motion signals
+            that hinder precise control over complex scenes.
+            To address these gaps, <strong>MotionGrounder</strong> introduces a unified,
+            inversion-free framework that enables stable motion transfer and grounded
+            multi-object control across distinct spatial regions.
+          </p>
+
+        </div>
+
+        <div class="hero-body">
+          <img src="./static/images/motivation.png" alt="Motivation" style="width: 70%; height: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Motivation -->
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Method</h2>
+
+        <h3 class="title is-4">Overall Framework</h3>
+
+        <div class="content has-text-justified">
+          <p>
+            <strong>MotionGrounder</strong> transfers motion dynamics from a source video to a target video
+            while grounding each object caption to its designated spatial region.
+            By estimating optical flow, we construct a <strong>Flow-based Motion Signal (FMS)</strong> that
+            serves as a representation of the source video's motion dynamics.
+            During denoising, the FMS aligns the motion of the target video with the source.
+            Simultaneously, our <strong>Object-Caption Alignment Loss (OCAL)</strong> ensures that
+            individual object captions are grounded within their designated spatial regions across
+            the entire video duration.
+          </p>
+        </div>
+
+        <div class="hero-body">
+          <img src="./static/images/method_overview.png" alt="MotionGrounder Method Overview" style="width: 100%; height: auto;">
+        </div>
+
+        <h3 class="title is-4">Flow-based Motion Signal (FMS)</h3>
+
+        <div class="content has-text-justified">
+          <p>
+            Our <strong>Flow-based Motion Signal (FMS)</strong> provides a stable motion prior by
+            constructing latent-space patch trajectories from dense optical flows.
+            During denoising, motion transfer is supervised by minimizing the distance between
+            the reference FMS and the displacements derived from cross-frame attention weights.
+          </p>
+        </div>
+
+        <div class="hero-body">
+          <img src="./static/images/fms.png" alt="Flow-based Motion Signal (FMS)" style="width: 70%; height: auto;">
+        </div>
+
+        <h3 class="title is-4">Object-Caption Alignment Loss (OCAL)</h3>
+
+        <div class="content has-text-justified">
+          <p>
+            Our <strong>Object-Caption Alignment Loss (OCAL)</strong> enforces spatial grounding by aligning
+            text-to-video and video-to-text attention with specific object masks during the denoising process.
+            By simultaneously maximizing attention within the target region and suppressing it elsewhere,
+            the objective ensures proper multi-object placement.
+          </p>
+        </div>
+
+        <div class="hero-body">
+          <img src="./static/images/ocal.png" alt="Object-Caption Alignment Loss (OCAL)" style="width: 70%; height: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Method -->
+
+<!-- Dataset -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Dataset Generation Pipeline</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            To support multi-object evaluation, we constructed a custom dataset of 52 videos,
+            pre-processed into 24-frame sequences at 480 × 720 resolution.
+            Our pipeline utilizes CogVLM2-Caption and GPT-5 to generate and structure captions into a
+            &lt;subject&gt; &lt;verb&gt; &lt;scene&gt; format, where every described object in
+            the &lt;subject&gt; is manually mapped to its corresponding mask.
+            To evaluate model robustness, we generate three prompt types:
+            (i) a <strong>Caption</strong> prompt that directly describes the input video content;
+            (ii) a <strong>Subject</strong> prompt that alters the main objects while preserving the original background; and
+            (iii) a <strong>Scene</strong> prompt that specifies an entirely new scene distinct from the source video.
+          </p>
+        </div>
+
+        <div class="hero-body">
+          <img src="./static/images/dataset_pipeline.png" alt="Dataset Generation Pipeline" style="width: 100%; height: auto;">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Method -->
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Results</h2>
+
+        <h3 class="title is-4">Caption Prompt</h3>
+
+        <!-- Caption prompt video 1 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/couple/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            CAPTION PROMPT: "A <span style="color: #1982c4;">man</span> and a <span style="color: #8ac926;">woman</span> are walking on a rocky path at sunset."
+          </p>
+        </div>
+        <!--/ Caption prompt video 1 -->
+
+        <!-- Caption prompt video 2 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/caption_prompt/0f6c2163de/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            CAPTION PROMPT: "A <span style="color: #ff595e;">snail with a brown shell</span> is crawling across a rough gray surface."
+          </p>
+        </div>
+        <!--/ Caption prompt video 2 -->
+
+        <h3 class="title is-4">Subject Prompt</h3>
+
+        <!-- Subject prompt video 1 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/helicopter/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            SUBJECT PROMPT: "A <span style="color: #FF595E;">soldier</span> is walking toward a <span style="color: #FFCA3A;">tank</span> on a helipad."
+          </p>
+        </div>
+        <!--/ Subject prompt video 1 -->
+
+        <!-- Subject prompt video 2 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/subject_prompt/a8999af004/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            SUBJECT PROMPT: "A <span style="color: #1982C4;">child</span>, a <span style="color: #FF595E;">cat</span>, and a <span style="color: #FFCA3A;">rabbit</span> are interacting on a green lawn."
+          </p>
+        </div>
+        <!--/ Subject prompt video 2 -->
+
+        <h3 class="title is-4">Scene Prompt</h3>
+
+        <!-- Scene prompt video 1 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/7ff84d66dd/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            SCENE PROMPT: "A <span style="color: #FFCA3A;">fox</span> and a <span style="color: #FF595E;">raccoon</span> are perched on a fallen tree trunk."
+          </p>
+        </div>
+        <!--/ Scene prompt video 1 -->
+
+        <!-- Scene prompt video 2 -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/reference.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/motiongrounder.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/dmt.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/motionclone.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/conmo.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/ditflow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        <div class="content has-text-justified" style="margin-top: -15px;">
+          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+            SCENE PROMPT: "A <span style="color: #8AC926;">peacock</span> and a <span style="color: #1982C4;">turkey</span> are standing in a garden courtyard."
+          </p>
+        </div>
+        <!--/ Scene prompt video 2 -->
+
+    </div>
+  </div>
+</section>
+<!--/ Results -->
+
+<!-- Applications -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Additional Applications</h2>
+
+        <h3 class="title is-4">Interchangeable Generation</h3>
+
+        <!-- Interchangeable generation -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/reference.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              Reference Video
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/interchangeable_1.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              "A <span style="color: #FFCA3A;">fox</span> and a <span style="color: #FF595E;">raccoon</span> are perched on a fallen tree trunk."
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/interchangeable_2.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              "A <span style="color: #FFCA3A;">raccoon</span> and a <span style="color: #FF595E;">fox</span> are perched on a fallen tree trunk."
+            </p>
+          </div>
+        </div>
+        <!--/ Interchangeable generation -->
+
+        <h3 class="title is-4">Object Removal</h3>
+
+        <!-- Object removal -->
+        <div class="columns is-mobile is-multiline is-centered">
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/removal_1.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              "A <span style="color: #FFCA3A;">raccoon</span> is perched on a fallen tree trunk."
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/removal_2.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              "A <span style="color: #FF595E;">fox</span> is perched on a fallen tree trunk."
+            </p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+              <source src="./static/videos/applications/removal_3.mp4" type="video/mp4">
+            </video>
+            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
+              "A fallen tree trunk."
+            </p>
+          </div>
+        </div>
+        <!--/ Object removal -->
+
+    </div>
+  </div>
+</section>
+
+<!-- BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{teodoro2026motiongrounder,
+    title={MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer},
+    author={Samuel Teodoro and Yun Chen and Agus Gunawan and Soo Ye Kim and Jihyong Oh and Munchurl Kim},
+    year={2026},
+    eprint={},
+    archivePrefix={arXiv}
+}</code></pre>
+  </div>
+</section>
+<!--/ BibTex citation -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Adapted from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--/ Footer -->
+
+<!-- Statcounter tracking code -->
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
