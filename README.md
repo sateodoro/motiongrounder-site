@@ -1,4 +1,4 @@
-## MotionGrounder: Grounder Multi-Object Motion Transfer via Diffusion Transformer 
+## MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer 
 
 ---
 

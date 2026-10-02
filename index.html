@@ -1,114 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MotionGrounder is a training-free Diffusion Transformer-based framework for motion transfer with object grounding in multi-object scenes. NeurIPS 2026.">
+  <meta name="keywords" content="motion transfer, multi-object, object grounding, diffusion transformer, video generation, training-free">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer">
+  <meta property="og:description" content="MotionGrounder is a training-free Diffusion Transformer-based framework for motion transfer with object grounding in multi-object scenes. NeurIPS 2026.">
+  <meta property="og:url" content="https://kaist-viclab.github.io/motiongrounder-site/">
+  <meta property="og:image" content="https://kaist-viclab.github.io/motiongrounder-site/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer">
+  <meta name="twitter:description" content="MotionGrounder is a training-free Diffusion Transformer-based framework for motion transfer with object grounding in multi-object scenes. NeurIPS 2026.">
+  <meta name="twitter:image" content="https://kaist-viclab.github.io/motiongrounder-site/static/images/social_preview.png">
 
-
-  <title>MotionGrounder</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect y=%2290%22 width=%22100%22 height=%2210px%22 fill=%22%238AC926%22 /><text y=%22.8em%22 x=%225%22 font-size=%2280%22 fill=%22%23FF595E%22>🏃‍♂️</text></svg>">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
+  <title>MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 0 96 100'%3E%3Crect x='24' y='24' width='48' height='60' rx='9' fill='%23FFCA3A'/%3E%3Cg fill='none' stroke-width='9' stroke-linecap='round' stroke-linejoin='round' transform='translate%282 -1%29'%3E%3Cg transform='rotate%28-29 53 32%29' stroke='%23D63D43'%3E%3Cline x1='53' y1='32' x2='53' y2='45'/%3E%3Cg transform='rotate%28-95 53 45%29'%3E%3Cline x1='53' y1='45' x2='53' y2='57'/%3E%3C/g%3E%3C/g%3E%3Cg transform='rotate%2826 46 56%29' stroke='%23D63D43'%3E%3Cline x1='46' y1='56' x2='46' y2='75'/%3E%3Cg transform='rotate%2813 46 75%29'%3E%3Cpolyline points='46%2C75 46%2C93 52%2C93'/%3E%3C/g%3E%3C/g%3E%3Cline x1='46' y1='56' x2='53' y2='32' stroke='%23FF595E' stroke-width='11'/%3E%3Ccircle cx='58' cy='17' r='9.5' fill='%23FF595E' stroke='none'/%3E%3Cg transform='rotate%28-47 46 56%29' stroke='%23FF595E'%3E%3Cline x1='46' y1='56' x2='46' y2='75'/%3E%3Cg transform='rotate%2859 46 75%29'%3E%3Cpolyline points='46%2C75 46%2C93 52%2C93'/%3E%3C/g%3E%3C/g%3E%3Cg transform='rotate%2831 53 32%29' stroke='%23FF595E'%3E%3Cline x1='53' y1='32' x2='53' y2='45'/%3E%3Cg transform='rotate%28-75 53 45%29'%3E%3Cline x1='53' y1='45' x2='53' y2='57'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('mg-intro');
+      setTimeout(function () { document.documentElement.classList.remove('mg-intro'); }, 9000);
+    }
+  </script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
+  <script defer src="static/js/index.js"></script>
 </head>
 
 <body>
 
-<!-- Title -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <span style="display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; margin-right: -5px; margin-bottom: 5px;">
-              <span style="font-size: 1.75em; color: rgb(255, 89, 94); line-height: 1;">🏃‍♂️</span>
-              <hr style="width: 90%; height: 6px; background-color: rgb(138, 201, 38); margin: 0; border: none; border-radius: 2px;">
+          <details class="mg-more">
+            <summary class="mg-more-btn">More research<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <nav class="mg-more-panel" aria-label="Related projects">
+              <p class="mg-more-head">Related projects</p>
+              <ul class="mg-more-list">
+                <li><a class="mg-more-item" href="https://kaist-viclab.github.io/omnitext-site/" target="_blank" rel="noopener"><span class="mg-more-name">OmniText</span><span class="mg-more-venue">ICLR 2026</span></a></li>
+                <li><a class="mg-more-item" href="https://kaist-viclab.github.io/primedit-site/" target="_blank" rel="noopener"><span class="mg-more-name">PRIMEdit</span><span class="mg-more-venue">IEEE TPAMI 2026</span></a></li>
+                <li><span class="mg-more-item is-current" aria-current="page"><span class="mg-more-name"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span></span><span class="mg-more-venue">NeurIPS 2026</span></span></li>
+              </ul>
+            </nav>
+          </details>
+
+          <h1 class="title is-1 publication-title mg-title">
+            <span class="mg-wordmark">
+              <svg class="runner mg-wordmark-icon" viewBox="8 2 68 98" aria-hidden="true">
+                <rect class="runner-box runner-red" x="28" y="28" width="40" height="56" rx="6"/>
+                <g class="runner-red">
+                  <g class="runner-figure">
+                    <g class="runner-far">
+                      <g class="runner-arm">
+                        <line x1="53" y1="32" x2="53" y2="45"/>
+                        <g class="runner-forearm"><line x1="53" y1="45" x2="53" y2="57"/></g>
+                      </g>
+                      <g class="runner-thigh">
+                        <line x1="46" y1="56" x2="46" y2="75"/>
+                        <g class="runner-shin"><polyline points="46,75 46,93 52,93"/></g>
+                      </g>
+                    </g>
+                    <line class="runner-torso" x1="46" y1="56" x2="53" y2="32"/>
+                    <circle cx="58" cy="17" r="9"/>
+                    <g class="runner-near">
+                      <g class="runner-thigh">
+                        <line x1="46" y1="56" x2="46" y2="75"/>
+                        <g class="runner-shin"><polyline points="46,75 46,93 52,93"/></g>
+                      </g>
+                      <g class="runner-arm">
+                        <line x1="53" y1="32" x2="53" y2="45"/>
+                        <g class="runner-forearm"><line x1="53" y1="45" x2="53" y2="57"/></g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span class="mg-wordmark-name"><span class="mg-fly mg-green" data-word="motion"><span class="mg-fly-text">Motion</span></span><span class="mg-fly mg-blue" data-word="grounded"><span class="mg-fly-text">Grounde<span class="mg-swap"><span class="mg-swap-from" aria-hidden="true">d</span><span class="mg-swap-to">r</span></span></span></span></span>
             </span>
 
-            <span style="font-weight: 900; font-size: 1.25em; vertical-align: middle;">
-              <span style="color: rgb(255, 89, 94);">Motion</span><span style="color: rgb(255, 202, 58);">Grounder</span>:
-            </span> <br>
-
-            <span style="font-weight: 600; display: block; margin-top: 10px;">
-              Grounded Multi-Object Motion<br>
-              Transfer via Diffusion Transformer
+            <span class="mg-title-sub">
+              <span class="mg-src mg-src-grounded">Grounded</span> Multi-Object <span class="mg-src mg-src-motion">Motion</span> Transfer via Diffusion Transformer
             </span>
           </h1>
 
-          <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+          <div class="is-size-5 publication-authors mg-authors">
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=-W-_ROYAAAAJ&hl">Samuel Teodoro</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://sateodoro.github.io/">Samuel Teodoro</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=vAUNfCcAAAAJ&hl">Yun Chen</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://therealchenyun.github.io/">Yun Chen</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://agusgun.github.io">Agus Gunawan</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://agusgun.github.io">Agus Gunawan</a><sup><img src="./static/images/kaist_aff.png" width="27"></sup>
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a><sup><img src="./static/images/adobe.png" width="19"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/sooyekim">Soo Ye Kim</a><sup><img src="./static/images/adobe.png" width="19"></sup>
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/ozbro">Jihyong Oh</a><sup>&#8224;,<img src="./static/images/cau_aff.png" width="19"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://sites.google.com/view/ozbro">Jihyong Oh</a><sup>&#8224;,<img src="./static/images/cau_aff.png" width="19"></sup>
             </span>
             <span class="author-block">
-              <a target="_blank" rel="noopener noreferrer" href="https://viclab.kaist.ac.kr/professor">Munchurl Kim</a><sup>&#8224;,<img src="./static/images/kaist_aff.png" width="27"></sup>&nbsp;&nbsp;
+              <a target="_blank" rel="noopener noreferrer" href="https://viclab.kaist.ac.kr/professor">Munchurl Kim</a><sup>&#8224;,<img src="./static/images/kaist_aff.png" width="27"></sup>
             </span>
           </div>
 
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup><img src="./static/images/kaist_aff.png" width="27"></sup>VICLab, KAIST, South Korea</span> &nbsp;&nbsp;
-            <span class="author-block"><sup><img src="./static/images/adobe.png" width="19"></sup> Adobe Research, California</span> &nbsp;&nbsp;
-            <span class="author-block"><sup><img src="./static/images/cau_aff.png" width="19"></sup>CMLab, Chung-Ang University, South Korea</span> &nbsp;&nbsp;
+          <div class="is-size-6 publication-authors mg-affiliations">
+            <span class="author-block"><sup><img src="./static/images/kaist_aff.png" width="27"></sup>VICLab, KAIST, South Korea</span>
+            <span class="author-block"><sup><img src="./static/images/adobe.png" width="19"></sup> Adobe Research, California</span>
+            <span class="author-block"><sup><img src="./static/images/cau_aff.png" width="19"></sup>CMLab, Chung-Ang University, South Korea</span>
+          </div>
+
+          <div class="is-size-6 publication-authors mg-emails">
+            <span class="author-block">{sateodoro, cyruby, agusgun, mkimee}@kaist.ac.kr</span>
+            <span class="author-block">sooyek@adobe.com</span>
+            <span class="author-block">jihyongoh@cau.ac.kr</span>
             <span class="eql-cntrb"><br><sup>&#8224;</sup>Co-Corresponding Authors</span>
           </div>
 
-          <div style="margin-top: 10px; display: flex; justify-content: center; align-items: center;">
-            <img src="./static/images/viclab_logo.png" width="155" style="margin-right: 35px;">
-            <img src="./static/images/kaist_logo.png" width="130" style="margin-right: 40px;">
-            <img src="./static/images/adobe_logo.png" width="150" style="margin-right: 15px;">
-            <img src="./static/images/cmlab_logo.png" width="170" style="margin-right: 2px;">
-            <img src="./static/images/cau_logo.png" width="200">
+          <div class="mg-logos">
+            <span class="mg-logos-group">
+              <img class="mg-logo-viclab" src="./static/images/viclab_logo.png" alt="VICLab">
+              <img class="mg-logo-kaist" src="./static/images/kaist_logo.png" alt="KAIST">
+              <img class="mg-logo-adobe" src="./static/images/adobe_logo.png" alt="Adobe">
+            </span>
+            <span class="mg-logos-group">
+              <img class="mg-logo-cmlab" src="./static/images/cmlab_logo.png" alt="CMLab">
+              <img class="mg-logo-cau" src="./static/images/cau_logo.png" alt="Chung-Ang University">
+            </span>
           </div>
+
+          <p class="mg-venue"><span class="mg-badge">NeurIPS 2026</span></p>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2604.00853" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2604.00853" target="_blank" class="button is-rounded mg-button">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
@@ -117,12 +153,23 @@
               </span>
 
               <span class="link-block">
-                <a href="https://github.com/YOUR REPO HERE" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="button is-rounded mg-button mg-button-pending">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (To be released)</span>
-                </a>
+                  <span>Code</span>
+                  <span class="mg-soon">soon</span>
+                </span>
+              </span>
+
+              <span class="link-block">
+                <span class="button is-rounded mg-button mg-button-pending">
+                  <span class="icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span>Dataset</span>
+                  <span class="mg-soon">soon</span>
+                </span>
               </span>
             </div>
           </div>
@@ -131,642 +178,627 @@
     </div>
   </div>
 </section>
-<!--/ Title -->
 
-<!-- Teaser video -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body" style="text-align: center;">
+    <div class="hero-body has-text-centered">
 
-      <p class="content has-text-justified">
-        <strong>MotionGrounder</strong> is a Diffusion Transformer-based framework
-        that transfers motion from reference videos to newly synthesized videos with explicit object
-        grounding, enabling object-consistent motion transfer with structural and
+      <p class="mg-lede">
+        <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> is a Diffusion Transformer-based framework
+        that transfers <span class="mg-key">motion</span> from reference videos to newly synthesized videos with explicit
+        <span class="mg-key">object grounding</span>, enabling object-consistent motion transfer with structural and
         appearance changes in a training-free, zero-shot manner.
       </p>
 
-      <video
-        id="tree"
-        preload="auto"
-        autoplay
-        muted
-        loop
-        controls
-        playsinline
-        style="width: 100%; height: auto; max-height: 600px;"
-      >
-        <source src="./static/videos/page_teaser.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="mg-stage mg-boxed" id="mg-teaser">
+        <div class="mg-stage-row">
+          <figure class="mg-pane">
+            <div class="mg-frame">
+            <video class="mg-stage-video is-active" data-ref="snail" poster="./static/videos/teaser/ref_snail.jpg" muted loop playsinline preload="auto" autoplay>
+              <source src="./static/videos/teaser/ref_snail.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-ref="helicopter" poster="./static/videos/teaser/ref_helicopter.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/ref_helicopter.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-ref="chimps" poster="./static/videos/teaser/ref_chimps.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/ref_chimps.mp4" type="video/mp4">
+            </video>
+              <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <span class="mg-pane-label">Reference Video</span>
+            </div>
+          </figure>
+
+          <span class="mg-stage-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+          <figure class="mg-pane">
+            <div class="mg-frame">
+            <video class="mg-stage-video is-active" data-example="caterpillar" poster="./static/videos/teaser/gen_caterpillar.jpg" muted loop playsinline preload="auto" autoplay>
+              <source src="./static/videos/teaser/gen_caterpillar.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-example="car" poster="./static/videos/teaser/gen_car.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/gen_car.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-example="soldier" poster="./static/videos/teaser/gen_soldier.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/gen_soldier.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-example="astronaut" poster="./static/videos/teaser/gen_astronaut.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/gen_astronaut.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-example="wolf" poster="./static/videos/teaser/gen_wolf.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/gen_wolf.mp4" type="video/mp4">
+            </video>
+            <video class="mg-stage-video" data-example="robot" poster="./static/videos/teaser/gen_robot.jpg" muted loop playsinline preload="auto">
+              <source src="./static/videos/teaser/gen_robot.mp4" type="video/mp4">
+            </video>
+              <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span></span>
+            </div>
+          </figure>
+        </div>
+
+        <p class="mg-stage-caption">&ldquo;A <span class="mg-tag mg-tag-blue" data-obj="1" tabindex="0">caterpillar</span> is crawling across a rough gray surface.&rdquo;</p>
+
+        <div class="mg-picker" role="group" aria-label="Teaser examples">
+          <button class="mg-pick is-active" type="button" data-example="caterpillar" aria-label="Show: A caterpillar crawling across a rough gray surface">
+            <img src="./static/videos/teaser/thumb_caterpillar.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+          <button class="mg-pick" type="button" data-example="car" aria-label="Show: A black car driving across a wet city street at night">
+            <img src="./static/videos/teaser/thumb_car.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+          <button class="mg-pick" type="button" data-example="soldier" aria-label="Show: A soldier walking toward a tank in a desert battlefield">
+            <img src="./static/videos/teaser/thumb_soldier.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+          <button class="mg-pick" type="button" data-example="astronaut" aria-label="Show: An astronaut walking toward a lunar lander on the moon">
+            <img src="./static/videos/teaser/thumb_astronaut.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+          <button class="mg-pick" type="button" data-example="wolf" aria-label="Show: A wolf, a bear cub and a rabbit on a mountain meadow">
+            <img src="./static/videos/teaser/thumb_wolf.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+          <button class="mg-pick" type="button" data-example="robot" aria-label="Show: A robot dog, a robot child and a hover drone on a neon-lit platform">
+            <img src="./static/videos/teaser/thumb_robot.jpg" alt="" width="300" height="200" loading="lazy">
+            <span class="mg-pick-bar"></span>
+          </button>
+        </div>
+      </div>
+<script type="application/json" id="mg-teaser-data">{"fps":12,"references":{"snail":{"colors":["blue"],"boxes":[[[0,117,413,224],[0,116,414,228],[0,123,429,229],[0,123,425,229],[0,111,458,234],[127,88,593,229],[240,81,480,240],[337,79,383,233],[329,94,391,229],[328,84,392,231],[319,85,401,242],[317,80,403,239],[311,86,409,235],[317,86,403,237],[319,86,401,236],[319,88,401,231],[319,85,401,236],[308,80,412,239],[300,80,420,241],[280,85,440,240],[272,81,448,240],[268,81,452,238],[252,83,468,238],[227,81,493,238]]]},"helicopter":{"colors":["red","yellow"],"boxes":[[[345,57,162,147],[356,57,157,145],[364,57,153,145],[373,57,149,147],[382,57,144,147],[393,57,138,145],[402,57,134,145],[410,57,131,145],[421,57,124,144],[430,55,121,146],[439,55,117,146],[449,54,114,145],[459,54,114,144],[468,52,114,146],[450,52,143,146],[445,51,157,147],[415,51,197,147],[413,51,208,145],[413,51,218,145],[416,51,224,145],[422,49,227,147],[428,48,230,148],[434,48,231,147],[495,52,179,143]],[[164,172,119,308],[157,174,121,306],[152,177,123,303],[142,180,129,300],[117,183,161,297],[115,184,159,296],[117,186,157,294],[124,186,149,294],[127,184,144,296],[130,183,140,297],[127,180,131,300],[121,177,129,303],[115,175,132,305],[111,174,133,306],[108,172,133,308],[105,174,132,306],[104,175,130,305],[102,178,129,302],[101,181,127,299],[101,184,123,296],[101,186,120,294],[99,186,119,294],[99,186,114,291],[101,184,108,287]]]},"chimps":{"colors":["red","yellow","blue"],"boxes":[[[171,201,350,279],[161,199,357,281],[165,208,347,272],[157,209,354,271],[162,211,349,269],[163,211,347,269],[154,211,353,269],[152,219,356,261],[161,221,339,259],[160,219,347,261],[151,223,351,257],[154,226,351,254],[152,229,346,251],[158,232,339,248],[149,232,353,248],[152,231,350,249],[154,231,344,249],[149,237,351,243],[146,238,351,242],[149,236,357,244],[147,237,351,243],[149,229,350,251],[146,229,352,251],[145,236,351,244]],[[0,147,193,333],[0,149,187,331],[0,151,183,329],[0,152,180,328],[0,152,175,328],[0,155,174,325],[0,161,167,319],[0,164,163,316],[0,165,161,315],[0,167,157,313],[0,158,133,322],[0,151,117,329],[0,117,203,363],[0,115,152,365],[0,249,69,231],[0,232,83,248],[0,256,34,174],[0,292,24,131],null,null,null,null,null,null],[[325,0,395,480],[343,0,377,480],[340,0,380,480],[341,0,379,480],[323,0,397,480],[314,0,406,480],[326,0,394,480],[325,0,395,480],[306,0,414,480],[299,0,421,480],[303,0,417,480],[319,17,401,463],[315,0,405,480],[315,0,405,480],[291,0,429,480],[304,0,416,480],[289,0,431,480],[283,0,437,480],[277,0,443,480],[271,0,449,480],[263,0,457,480],[257,0,463,480],[249,0,471,480],[244,0,476,480]]]},"toads":{"colors":["yellow","red"],"boxes":[[[33,81,278,244],[31,83,288,242],[31,80,286,243],[35,78,292,246],[36,83,288,246],[48,79,273,252],[43,78,286,256],[41,82,291,253],[48,85,291,250],[50,82,279,249],[47,83,291,250],[45,83,284,248],[56,79,278,253],[54,79,285,250],[62,79,284,254],[57,81,297,252],[61,79,285,255],[50,80,301,254],[61,84,286,252],[67,83,282,254],[63,83,288,248],[68,86,280,251],[68,87,292,248],[79,87,287,248]],[[395,165,284,221],[401,166,286,227],[403,161,285,232],[392,165,298,220],[401,165,294,218],[403,170,293,223],[410,170,292,226],[411,167,296,226],[410,169,296,224],[406,172,307,221],[409,169,309,228],[415,170,300,231],[425,163,295,219],[424,166,296,219],[417,167,303,219],[426,167,294,220],[425,168,295,225],[428,164,292,232],[424,170,296,234],[430,169,290,227],[434,170,286,232],[431,171,289,222],[437,170,283,231],[431,177,289,234]]]},"couple":{"colors":["green","blue"],"boxes":[[[193,223,77,257],[193,223,77,257],[195,223,75,257],[193,223,77,257],[193,223,77,257],[193,223,77,257],[193,223,77,257],[193,225,77,255],[193,226,83,254],[193,228,85,252],[193,229,86,251],[193,233,89,247],[193,236,89,244],[190,237,91,243],[189,240,92,240],[186,242,93,238],[186,243,92,237],[186,243,92,237],[183,243,96,237],[184,243,95,237],[184,243,97,237],[187,242,94,238],[192,240,89,240],[196,240,85,240]],[[278,211,100,269],[279,213,99,267],[279,214,99,266],[281,216,96,264],[281,216,96,264],[282,216,93,262],[282,214,92,261],[281,214,93,258],[281,214,91,258],[279,214,93,263],[279,216,93,262],[279,217,93,263],[279,219,93,261],[279,220,93,260],[279,222,93,258],[279,223,95,257],[279,226,96,254],[279,228,98,252],[281,229,96,251],[282,231,98,249],[283,231,98,249],[282,231,101,249],[279,231,105,249],[279,229,107,251]]]},"birds":{"colors":["green","blue"],"boxes":[[[216,3,504,477],[216,25,489,455],[219,55,439,425],[214,71,404,409],[222,113,380,367],[235,129,385,351],[232,149,387,331],[238,165,372,315],[244,177,366,303],[241,181,368,299],[238,181,376,299],[252,183,360,297],[241,127,371,353],[249,109,367,371],[246,121,376,359],[239,133,377,347],[247,122,367,358],[247,136,358,344],[247,145,359,335],[241,168,365,312],[248,208,356,272],[245,202,363,278],[239,197,372,283],[248,183,368,297]],[[219,142,104,117],[224,142,99,117],[234,143,79,122],[247,141,68,111],[224,139,82,328],[224,139,80,341],[225,140,97,340],[226,141,102,339],[227,143,107,337],[228,145,107,335],[230,149,105,331],[229,149,108,331],[231,151,108,329],[233,153,108,327],[233,153,110,327],[232,153,111,327],[233,154,112,326],[232,155,113,325],[233,155,112,325],[233,155,112,325],[231,155,112,325],[231,155,111,325],[231,157,110,323],[231,160,109,320]]]}},"examples":[{"id":"caterpillar","ref":"snail","caption":"A {1} is crawling across a rough gray surface.","words":["caterpillar"]},{"id":"car","ref":"snail","caption":"A {1} is driving across a wet city street at night.","words":["car with a sleek black finish"]},{"id":"soldier","ref":"helicopter","caption":"A {2} is walking toward a {1} in a desert battlefield.","words":["tank","soldier"]},{"id":"astronaut","ref":"helicopter","caption":"An {2} is walking toward a {1} on the surface of the moon.","words":["lunar lander","astronaut"]},{"id":"wolf","ref":"chimps","caption":"A {3} and a {1} and a {2} are interacting on a mountain meadow.","words":["bear cub","rabbit","wolf"]},{"id":"robot","ref":"chimps","caption":"A {3} and a {1} and a {2} are interacting on a neon-lit floating platform.","words":["robot child","hover drone","robot dog"]}]}</script>
 
     </div>
   </div>
 </section>
-<!--/ Teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero">
+<section class="section mg-section" id="abstract">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Motion transfer enables controllable video generation by transferring temporal
-            dynamics from a reference video to synthesize a new video conditioned on a target caption.
-            However, existing Diffusion Transformer (DiT)–based methods are limited to single-object
-            videos, restricting fine-grained control in real-world scenes with multiple objects.
-            In this work, we introduce <strong>MotionGrounder</strong>, a DiT-based framework that
-            <i>firstly</i> handles motion transfer with <i>multi-object controllability</i>.
-            Our <strong>Flow-based Motion Signal (FMS)</strong> in MotionGrounder provides a stable motion prior
-            for target video generation, while our <strong>Object-Caption Alignment Loss (OCAL)</strong> grounds
-            object captions to their corresponding spatial regions.
-            We further propose a <i>new</i> <strong>Object Grounding Score (OGS)</strong>, which jointly evaluates
-            (i) spatial alignment between source video objects and their generated counterparts and
-            (ii) semantic consistency between each generated object and its target caption.
-            Our experiments show that MotionGrounder consistently outperforms recent baselines
-            across quantitative, qualitative, and human evaluations.
-          </p>
+    <div class="mg-panel">
+      <h2 class="mg-heading">Abstract</h2>
+      <p class="mg-text">
+        Motion transfer enables controllable video generation by transferring temporal
+        dynamics from a reference video to synthesize a new video conditioned on a target caption.
+        However, existing Diffusion Transformer (DiT)–based methods are limited to single-object
+        videos, restricting fine-grained control in real-world scenes with multiple objects.
+        In this work, we introduce <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span>, a DiT-based framework that
+        <i>firstly</i> handles motion transfer with <i>multi-object controllability</i>.
+        Our <strong>Flow-based Motion Signal (FMS)</strong> in <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> provides a stable motion prior
+        for target video generation, while our <strong>Object-Caption Alignment Loss (OCAL)</strong> grounds
+        object captions to their corresponding spatial regions.
+        We further propose a <i>new</i> <strong>Object Grounding Score (OGS)</strong>, which jointly evaluates
+        (i) spatial alignment between source video objects and their generated counterparts and
+        (ii) semantic consistency between each generated object and its target caption.
+        Our experiments show that <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> consistently outperforms recent baselines
+        across quantitative, qualitative, and human evaluations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section mg-section" id="motivation">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">Motivation</h2>
+    <p class="mg-text">
+      Existing motion transfer methods struggle with multi-object dynamics, often relying
+      on costly inversion processes or lacking explicit grounding between objects
+      and their corresponding target captions.
+      While recent DiT-based approaches offer zero-shot capabilities, current
+      patch trajectory-based methods (PTBM) extract noisy motion signals
+      that hinder precise control over complex scenes.
+      To address these gaps, <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> introduces a unified,
+      inversion-free framework that enables stable motion transfer and grounded
+      multi-object control across distinct spatial regions.
+    </p>
+
+      <figure class="mg-table-figure">
+        <div class="mg-table-wrap">
+          <table class="mg-table" aria-describedby="motivation-table-caption">
+            <thead>
+              <tr><th scope="col">Method</th><th scope="col">DiT-based</th><th scope="col">Without inversion</th><th scope="col">Multi-object</th><th scope="col">Object grounding</th><th scope="col">PTBM</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></th><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></th><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></th><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">MotionFlow <a class="mg-cite" data-cite="motionflow2026meral" href="#ref-4" aria-label="Reference 4">[4]</a></th><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></th><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">RoPECraft <a class="mg-cite" data-cite="ropecraft2025gokmen" href="#ref-6" aria-label="Reference 6">[6]</a></th><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">FlowMotion <a class="mg-cite" data-cite="flowmotion2026wang" href="#ref-7" aria-label="Reference 7">[7]</a></th><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+              <tr><th scope="row">MultiMotion <a class="mg-cite" data-cite="multimotion2025liu" href="#ref-8" aria-label="Reference 8">[8]</a></th><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span> <span class="mg-chip mg-chip-red">Noisy</span></td></tr>
+              <tr><th scope="row">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></th><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-chip mg-chip-red">Limited</span></td><td><span class="mg-mark mg-no" role="img" aria-label="No"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span> <span class="mg-chip mg-chip-red">Noisy</span></td></tr>
+              <tr class="is-ours"><th scope="row"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</th><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span></td><td><span class="mg-mark mg-yes" role="img" aria-label="Yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></span> <span class="mg-chip mg-chip-green">Stable</span></td></tr>
+            </tbody>
+          </table>
         </div>
+        <figcaption id="motivation-table-caption">Comparison of motion transfer methods highlighting key limitations of prior works. Motion signal quality is reported only for patch trajectory-based methods (PTBM).</figcaption>
+      </figure>
+  </div>
+</section>
+
+<section class="section mg-section" id="method">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">Method</h2>
+
+    <h3 class="mg-subheading">Overall Framework</h3>
+      <p class="mg-text">
+        <span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> transfers motion dynamics from a source video to a target video while grounding each object caption to its designated spatial region. By estimating optical flow, we construct a <strong>Flow-based Motion Signal (FMS)</strong> that serves as a representation of the source video's motion dynamics. During denoising, the FMS aligns the motion of the target video with the source. Simultaneously, our <strong>Object-Caption Alignment Loss (OCAL)</strong> ensures that individual object captions are grounded within their designated spatial regions across the entire video duration.
+      </p>
+      <figure class="mg-figure mg-figure-wide">
+        <img src="./static/images/method_overview.png" alt="MotionGrounder method overview">
+      </figure>
+
+    <h3 class="mg-subheading">Flow-based Motion Signal (FMS)</h3>
+      <p class="mg-text">
+        Our <strong>Flow-based Motion Signal (FMS)</strong> provides a stable motion prior by constructing latent-space patch trajectories from dense optical flows. During denoising, motion transfer is supervised by minimizing the distance between the reference FMS and the displacements derived from cross-frame attention weights.
+      </p>
+      <figure class="mg-figure mg-figure-medium">
+        <img src="./static/images/fms.png" alt="Flow-based Motion Signal (FMS)">
+      </figure>
+
+    <h3 class="mg-subheading">Object-Caption Alignment Loss (OCAL)</h3>
+      <p class="mg-text">
+        Our <strong>Object-Caption Alignment Loss (OCAL)</strong> enforces spatial grounding by aligning text-to-video and video-to-text attention with specific object masks during the denoising process. By simultaneously maximizing attention within the target region and suppressing it elsewhere, the objective ensures proper multi-object placement.
+      </p>
+      <figure class="mg-figure mg-figure-medium">
+        <img src="./static/images/ocal.png" alt="Object-Caption Alignment Loss (OCAL)">
+      </figure>
+  </div>
+</section>
+
+<section class="section mg-section" id="dataset">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">Dataset Generation Pipeline</h2>
+      <p class="mg-text">
+        To support multi-object evaluation, we constructed a custom dataset of 52 videos, pre-processed into 24-frame sequences at 480 × 720 resolution. Our pipeline utilizes CogVLM2-Caption and GPT-5 to generate and structure captions into a &lt;subject&gt; &lt;verb&gt; &lt;scene&gt; format, where every described object in the &lt;subject&gt; is manually mapped to its corresponding mask. To evaluate model robustness, we generate three prompt types: (i) a <strong>Caption</strong> prompt that directly describes the input video content; (ii) a <strong>Subject</strong> prompt that alters the main objects while preserving the original background; and (iii) a <strong>Scene</strong> prompt that specifies an entirely new scene distinct from the source video.
+      </p>
+      <figure class="mg-figure mg-figure-wide">
+        <img src="./static/images/dataset_pipeline.png" alt="Dataset generation pipeline">
+      </figure>
+  </div>
+</section>
+
+<section class="section mg-section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">Results</h2>
+
+    <div class="mg-carousel" id="mg-results" role="region" aria-roledescription="carousel" aria-label="Qualitative comparisons">
+      <div class="mg-tabs" role="group" aria-label="Prompt type">
+        <button class="mg-tab is-active" type="button" data-group="caption" data-go="0">Caption Prompt</button>
+        <button class="mg-tab" type="button" data-group="subject" data-go="2">Subject Prompt</button>
+        <button class="mg-tab" type="button" data-group="scene" data-go="4">Scene Prompt</button>
+      </div>
+
+      <div class="mg-carousel-view">
+        <div class="mg-carousel-track">
+          <div class="mg-slide mg-boxed is-active" role="group" aria-roledescription="slide" aria-label="1 of 6: Caption Prompt" data-group="caption">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="couple" poster="./static/videos/results/caption_prompt/couple/reference_clean.jpg" src="./static/videos/results/caption_prompt/couple/reference_clean.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/motiongrounder.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/dmt.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/moft.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/motionclone.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/conmo.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" src="./static/videos/results/caption_prompt/couple/ditflow.mp4" muted loop playsinline preload="auto" autoplay></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-blue" data-obj="2" tabindex="0">man</span> and a <span class="mg-tag mg-tag-green" data-obj="1" tabindex="0">woman</span> are walking on a rocky path at sunset.&rdquo;</p>
+          </div>
+          <div class="mg-slide mg-boxed" role="group" aria-roledescription="slide" aria-label="2 of 6: Caption Prompt" data-group="caption">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="snail" poster="./static/videos/teaser/ref_snail.jpg" data-src="./static/videos/teaser/ref_snail.mp4" muted loop playsinline preload="none"></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/motiongrounder.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/dmt.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/moft.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/motionclone.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/conmo.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/caption_prompt/0f6c2163de/ditflow.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-blue" data-obj="1" tabindex="0">snail with a brown shell</span> is crawling across a rough gray surface.&rdquo;</p>
+          </div>
+          <div class="mg-slide mg-boxed" role="group" aria-roledescription="slide" aria-label="3 of 6: Subject Prompt" data-group="subject">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="helicopter" poster="./static/videos/teaser/ref_helicopter.jpg" data-src="./static/videos/teaser/ref_helicopter.mp4" muted loop playsinline preload="none"></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/motiongrounder.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/dmt.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/moft.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/motionclone.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/conmo.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/helicopter/ditflow.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-yellow" data-obj="2" tabindex="0">soldier</span> is walking toward a <span class="mg-tag mg-tag-red" data-obj="1" tabindex="0">tank</span> on a helipad.&rdquo;</p>
+          </div>
+          <div class="mg-slide mg-boxed" role="group" aria-roledescription="slide" aria-label="4 of 6: Subject Prompt" data-group="subject">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="chimps" poster="./static/videos/teaser/ref_chimps.jpg" data-src="./static/videos/teaser/ref_chimps.mp4" muted loop playsinline preload="none"></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/motiongrounder.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/dmt.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/moft.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/motionclone.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/conmo.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/subject_prompt/a8999af004/ditflow.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-blue" data-obj="3" tabindex="0">child</span>, a <span class="mg-tag mg-tag-red" data-obj="1" tabindex="0">cat</span>, and a <span class="mg-tag mg-tag-yellow" data-obj="2" tabindex="0">rabbit</span> are interacting on a green lawn.&rdquo;</p>
+          </div>
+          <div class="mg-slide mg-boxed" role="group" aria-roledescription="slide" aria-label="5 of 6: Scene Prompt" data-group="scene">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="toads" poster="./static/videos/applications/reference_clean.jpg" data-src="./static/videos/applications/reference_clean.mp4" muted loop playsinline preload="none"></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/motiongrounder.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/dmt.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/moft.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/motionclone.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/conmo.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/7ff84d66dd/ditflow.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-yellow" data-obj="1" tabindex="0">fox</span> and a <span class="mg-tag mg-tag-red" data-obj="2" tabindex="0">raccoon</span> are perched on a fallen tree trunk.&rdquo;</p>
+          </div>
+          <div class="mg-slide mg-boxed" role="group" aria-roledescription="slide" aria-label="6 of 6: Scene Prompt" data-group="scene">
+            <div class="mg-slide-top">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-ref="birds" poster="./static/videos/results/scene_prompt/bfab1ad8f9/reference_clean.jpg" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/reference_clean.mp4" muted loop playsinline preload="none"></video>
+                  <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+                  <span class="mg-pane-label">Reference Video</span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/motiongrounder.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label mg-pane-label-ours"><span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span> (Ours)</span>
+                </div>
+              </figure>
+            </div>
+            <div class="mg-slide-rest">
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/dmt.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DMT <a class="mg-cite" data-cite="dmt2023yatim" href="#ref-1" aria-label="Reference 1">[1]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/moft.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MOFT <a class="mg-cite" data-cite="moft2024xiao" href="#ref-2" aria-label="Reference 2">[2]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/motionclone.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">MotionClone <a class="mg-cite" data-cite="motionclone2024ling" href="#ref-3" aria-label="Reference 3">[3]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/conmo.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">ConMo <a class="mg-cite" data-cite="conmo2025gao" href="#ref-5" aria-label="Reference 5">[5]</a></span>
+                </div>
+              </figure>
+              <figure class="mg-card">
+                <div class="mg-frame">
+                  <video class="mg-card-video" data-src="./static/videos/results/scene_prompt/bfab1ad8f9/ditflow.mp4" muted loop playsinline preload="none"></video>
+                  <span class="mg-pane-label">DiTFlow <a class="mg-cite" data-cite="ditflow2025pondaven" href="#ref-9" aria-label="Reference 9">[9]</a></span>
+                </div>
+              </figure>
+            </div>
+            <p class="mg-slide-caption">&ldquo;A <span class="mg-tag mg-tag-green" data-obj="1" tabindex="0">peacock</span> and a <span class="mg-tag mg-tag-blue" data-obj="2" tabindex="0">turkey</span> are standing in a garden courtyard.&rdquo;</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mg-carousel-nav">
+        <button class="mg-arrow" type="button" data-step="-1" aria-label="Previous result"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <div class="mg-dots">
+          <button class="mg-dot is-active" type="button" data-go="0" aria-label="Show result 1: Caption Prompt"></button>
+          <button class="mg-dot" type="button" data-go="1" aria-label="Show result 2: Caption Prompt"></button>
+          <button class="mg-dot" type="button" data-go="2" aria-label="Show result 3: Subject Prompt"></button>
+          <button class="mg-dot" type="button" data-go="3" aria-label="Show result 4: Subject Prompt"></button>
+          <button class="mg-dot" type="button" data-go="4" aria-label="Show result 5: Scene Prompt"></button>
+          <button class="mg-dot" type="button" data-go="5" aria-label="Show result 6: Scene Prompt"></button>
+        </div>
+        <button class="mg-arrow" type="button" data-step="1" aria-label="Next result"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
   </div>
 </section>
-<!--/ Paper abstract -->
 
-<!-- Motivation -->
-<section class="section">
+<section class="section mg-section" id="applications">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Motivation</h2>
+    <h2 class="mg-heading">Additional Applications</h2>
 
-        <div class="content has-text-justified">
-
-          <p>
-            Existing motion transfer methods struggle with multi-object dynamics, often relying
-            on costly inversion processes or lacking explicit grounding between objects
-            and their corresponding target captions.
-            While recent DiT-based approaches offer zero-shot capabilities, current
-            patch trajectory-based methods (PTBM) extract noisy motion signals
-            that hinder precise control over complex scenes.
-            To address these gaps, <strong>MotionGrounder</strong> introduces a unified,
-            inversion-free framework that enables stable motion transfer and grounded
-            multi-object control across distinct spatial regions.
-          </p>
-
-        </div>
-
-        <div class="hero-body">
-          <img src="./static/images/motivation.png" alt="Motivation" style="width: 70%; height: auto;">
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Motivation -->
-
-<!-- Method -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Method</h2>
-
-        <h3 class="title is-4">Overall Framework</h3>
-
-        <div class="content has-text-justified">
-          <p>
-            <strong>MotionGrounder</strong> transfers motion dynamics from a source video to a target video
-            while grounding each object caption to its designated spatial region.
-            By estimating optical flow, we construct a <strong>Flow-based Motion Signal (FMS)</strong> that
-            serves as a representation of the source video's motion dynamics.
-            During denoising, the FMS aligns the motion of the target video with the source.
-            Simultaneously, our <strong>Object-Caption Alignment Loss (OCAL)</strong> ensures that
-            individual object captions are grounded within their designated spatial regions across
-            the entire video duration.
-          </p>
-        </div>
-
-        <div class="hero-body">
-          <img src="./static/images/method_overview.png" alt="MotionGrounder Method Overview" style="width: 100%; height: auto;">
-        </div>
-
-        <h3 class="title is-4">Flow-based Motion Signal (FMS)</h3>
-
-        <div class="content has-text-justified">
-          <p>
-            Our <strong>Flow-based Motion Signal (FMS)</strong> provides a stable motion prior by
-            constructing latent-space patch trajectories from dense optical flows.
-            During denoising, motion transfer is supervised by minimizing the distance between
-            the reference FMS and the displacements derived from cross-frame attention weights.
-          </p>
-        </div>
-
-        <div class="hero-body">
-          <img src="./static/images/fms.png" alt="Flow-based Motion Signal (FMS)" style="width: 70%; height: auto;">
-        </div>
-
-        <h3 class="title is-4">Object-Caption Alignment Loss (OCAL)</h3>
-
-        <div class="content has-text-justified">
-          <p>
-            Our <strong>Object-Caption Alignment Loss (OCAL)</strong> enforces spatial grounding by aligning
-            text-to-video and video-to-text attention with specific object masks during the denoising process.
-            By simultaneously maximizing attention within the target region and suppressing it elsewhere,
-            the objective ensures proper multi-object placement.
-          </p>
-        </div>
-
-        <div class="hero-body">
-          <img src="./static/images/ocal.png" alt="Object-Caption Alignment Loss (OCAL)" style="width: 70%; height: auto;">
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Method -->
-
-<!-- Dataset -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Dataset Generation Pipeline</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            To support multi-object evaluation, we constructed a custom dataset of 52 videos,
-            pre-processed into 24-frame sequences at 480 × 720 resolution.
-            Our pipeline utilizes CogVLM2-Caption and GPT-5 to generate and structure captions into a
-            &lt;subject&gt; &lt;verb&gt; &lt;scene&gt; format, where every described object in
-            the &lt;subject&gt; is manually mapped to its corresponding mask.
-            To evaluate model robustness, we generate three prompt types:
-            (i) a <strong>Caption</strong> prompt that directly describes the input video content;
-            (ii) a <strong>Subject</strong> prompt that alters the main objects while preserving the original background; and
-            (iii) a <strong>Scene</strong> prompt that specifies an entirely new scene distinct from the source video.
-          </p>
-        </div>
-
-        <div class="hero-body">
-          <img src="./static/images/dataset_pipeline.png" alt="Dataset Generation Pipeline" style="width: 100%; height: auto;">
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Method -->
-
-<!-- Results -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Results</h2>
-
-        <h3 class="title is-4">Caption Prompt</h3>
-
-        <!-- Caption prompt video 1 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/reference.mp4" type="video/mp4">
+    <div class="mg-apps mg-boxed" id="mg-apps">
+      <h3 class="mg-subheading">Interchangeable Generation</h3>
+      <div class="mg-grid-3">
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" data-ref="toads" poster="./static/videos/applications/reference_clean.jpg" autoplay muted loop playsinline preload="auto">
+              <source src="./static/videos/applications/reference_clean.mp4" type="video/mp4">
             </video>
+            <svg class="mg-boxes" viewBox="0 0 720 480" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <span class="mg-pane-label">Reference Video</span>
           </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/couple/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            CAPTION PROMPT: "A <span style="color: #1982c4;">man</span> and a <span style="color: #8ac926;">woman</span> are walking on a rocky path at sunset."
-          </p>
-        </div>
-        <!--/ Caption prompt video 1 -->
-
-        <!-- Caption prompt video 2 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/reference.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/caption_prompt/0f6c2163de/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            CAPTION PROMPT: "A <span style="color: #ff595e;">snail with a brown shell</span> is crawling across a rough gray surface."
-          </p>
-        </div>
-        <!--/ Caption prompt video 2 -->
-
-        <h3 class="title is-4">Subject Prompt</h3>
-
-        <!-- Subject prompt video 1 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/reference.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/helicopter/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            SUBJECT PROMPT: "A <span style="color: #FF595E;">soldier</span> is walking toward a <span style="color: #FFCA3A;">tank</span> on a helipad."
-          </p>
-        </div>
-        <!--/ Subject prompt video 1 -->
-
-        <!-- Subject prompt video 2 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/reference.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/subject_prompt/a8999af004/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            SUBJECT PROMPT: "A <span style="color: #1982C4;">child</span>, a <span style="color: #FF595E;">cat</span>, and a <span style="color: #FFCA3A;">rabbit</span> are interacting on a green lawn."
-          </p>
-        </div>
-        <!--/ Subject prompt video 2 -->
-
-        <h3 class="title is-4">Scene Prompt</h3>
-
-        <!-- Scene prompt video 1 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/reference.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/7ff84d66dd/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            SCENE PROMPT: "A <span style="color: #FFCA3A;">fox</span> and a <span style="color: #FF595E;">raccoon</span> are perched on a fallen tree trunk."
-          </p>
-        </div>
-        <!--/ Scene prompt video 1 -->
-
-        <!-- Scene prompt video 2 -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">Reference Video</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/reference.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionGrounder (Ours)</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/motiongrounder.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DMT</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/dmt.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">MotionClone</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/motionclone.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">ConMo</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/conmo.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <p style="font-weight: bold; margin-bottom: 0.5em;">DiTFlow</p>
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/results/scene_prompt/bfab1ad8f9/ditflow.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="content has-text-justified" style="margin-top: -15px;">
-          <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-            SCENE PROMPT: "A <span style="color: #8AC926;">peacock</span> and a <span style="color: #1982C4;">turkey</span> are standing in a garden courtyard."
-          </p>
-        </div>
-        <!--/ Scene prompt video 2 -->
-
-    </div>
-  </div>
-</section>
-<!--/ Results -->
-
-<!-- Applications -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width has-text-centered">
-        <h2 class="title is-3">Additional Applications</h2>
-
-        <h3 class="title is-4">Interchangeable Generation</h3>
-
-        <!-- Interchangeable generation -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-              <source src="./static/videos/applications/reference.mp4" type="video/mp4">
-            </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              Reference Video
-            </p>
-          </div>
-
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        </figure>
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" autoplay muted loop playsinline preload="auto">
               <source src="./static/videos/applications/interchangeable_1.mp4" type="video/mp4">
             </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              "A <span style="color: #FFCA3A;">fox</span> and a <span style="color: #FF595E;">raccoon</span> are perched on a fallen tree trunk."
-            </p>
           </div>
-
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <figcaption class="mg-card-caption">&ldquo;A <span class="mg-tag mg-tag-yellow" data-obj="1" tabindex="0">fox</span> and a <span class="mg-tag mg-tag-red" data-obj="2" tabindex="0">raccoon</span> are perched on a fallen tree trunk.&rdquo;</figcaption>
+        </figure>
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" autoplay muted loop playsinline preload="auto">
               <source src="./static/videos/applications/interchangeable_2.mp4" type="video/mp4">
             </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              "A <span style="color: #FFCA3A;">raccoon</span> and a <span style="color: #FF595E;">fox</span> are perched on a fallen tree trunk."
-            </p>
           </div>
-        </div>
-        <!--/ Interchangeable generation -->
+          <figcaption class="mg-card-caption">&ldquo;A <span class="mg-tag mg-tag-yellow" data-obj="1" tabindex="0">raccoon</span> and a <span class="mg-tag mg-tag-red" data-obj="2" tabindex="0">fox</span> are perched on a fallen tree trunk.&rdquo;</figcaption>
+        </figure>
+      </div>
 
-        <h3 class="title is-4">Object Removal</h3>
-
-        <!-- Object removal -->
-        <div class="columns is-mobile is-multiline is-centered">
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+      <h3 class="mg-subheading">Object Removal</h3>
+      <div class="mg-grid-3">
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" autoplay muted loop playsinline preload="auto">
               <source src="./static/videos/applications/removal_1.mp4" type="video/mp4">
             </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              "A <span style="color: #FFCA3A;">raccoon</span> is perched on a fallen tree trunk."
-            </p>
           </div>
-
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <figcaption class="mg-card-caption">&ldquo;A <span class="mg-tag mg-tag-yellow" data-obj="1" tabindex="0">raccoon</span> is perched on a fallen tree trunk.&rdquo;</figcaption>
+        </figure>
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" autoplay muted loop playsinline preload="auto">
               <source src="./static/videos/applications/removal_2.mp4" type="video/mp4">
             </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              "A <span style="color: #FF595E;">fox</span> is perched on a fallen tree trunk."
-            </p>
           </div>
-
-          <div class="column is-one-third has-text-centered">
-            <video data-group="group0" autoplay muted loop preload playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+          <figcaption class="mg-card-caption">&ldquo;A <span class="mg-tag mg-tag-red" data-obj="2" tabindex="0">fox</span> is perched on a fallen tree trunk.&rdquo;</figcaption>
+        </figure>
+        <figure class="mg-card">
+          <div class="mg-frame">
+            <video class="mg-card-video" autoplay muted loop playsinline preload="auto">
               <source src="./static/videos/applications/removal_3.mp4" type="video/mp4">
             </video>
-            <p style="font-family: 'Lato', sans-serif; font-weight: 600; font-size: 1.2em; text-align: center;">
-              "A fallen tree trunk."
-            </p>
           </div>
-        </div>
-        <!--/ Object removal -->
-
-    </div>
-  </div>
-</section>
-
-<!-- BibTex citation -->
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{teodoro2026motiongrounder,
-    title={MotionGrounder: Grounded Multi-Object Motion Transfer via Diffusion Transformer},
-    author={Samuel Teodoro and Yun Chen and Agus Gunawan and Soo Ye Kim and Jihyong Oh and Munchurl Kim},
-    year={2026},
-    eprint={2604.00853},
-    archivePrefix={arXiv}
-}</code></pre>
-  </div>
-</section>
-<!--/ BibTex citation -->
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            Adapted from <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
+          <figcaption class="mg-card-caption">&ldquo;A fallen tree trunk.&rdquo;</figcaption>
+        </figure>
       </div>
     </div>
   </div>
-</footer>
-<!--/ Footer -->
+</section>
 
-<!-- Statcounter tracking code -->
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-<!-- End of Statcounter Code -->
+<section class="section mg-section" id="references">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">References</h2>
+      <ol class="mg-refs">
+        <li id="ref-1">Danah Yatim, Rafail Fridman, Omer Bar-Tal, Yoni Kasten, and Tali Dekel. <span class="mg-ref-title">Space-Time Diffusion Features for Zero-Shot Text-Driven Motion Transfer.</span> CVPR, 2024.</li>
+        <li id="ref-2">Zeqi Xiao, Yifan Zhou, Shuai Yang, and Xingang Pan. <span class="mg-ref-title">Video Diffusion Models are Training-free Motion Interpreter and Controller.</span> NeurIPS, 2024.</li>
+        <li id="ref-3">Pengyang Ling, Jiazi Bu, Pan Zhang, Xiaoyi Dong, Yuhang Zang, Tong Wu, Huaian Chen, Jiaqi Wang, and Yi Jin. <span class="mg-ref-title">MotionClone: Training-Free Motion Cloning for Controllable Video Generation.</span> ICLR, 2025.</li>
+        <li id="ref-4">Tuna Han Salih Meral, Hidir Yesiltepe, Connor Dunlop, and Pinar Yanardag. <span class="mg-ref-title">MotionFlow: Attention-Driven Motion Transfer in Video Diffusion Models.</span> AAAI, 2026.</li>
+        <li id="ref-5">Jiayi Gao, Zijin Yin, Changcheng Hua, Yuxin Peng, Kongming Liang, Zhanyu Ma, Jun Guo, and Yang Liu. <span class="mg-ref-title">ConMo: Controllable Motion Disentanglement and Recomposition for Zero-Shot Motion Transfer.</span> CVPR, 2025.</li>
+        <li id="ref-6">Ahmet Berke Gokmen, Yigit Ekin, Bahri Batuhan Bilecen, and Aysegul Dundar. <span class="mg-ref-title">RoPECraft: Training-Free Motion Transfer with Trajectory-Guided RoPE Optimization on Diffusion Transformers.</span> NeurIPS, 2025.</li>
+        <li id="ref-7">Zhen Wang, Youcan Xu, Jun Xiao, and Long Chen. <span class="mg-ref-title">FlowMotion: Training-Free Flow Guidance for Video Motion Transfer.</span> CVPR, 2026.</li>
+        <li id="ref-8">Penghui Liu, Jiangshan Wang, Yutong Shen, Shanhui Mo, Chenyang Qi, and Yue Ma. <span class="mg-ref-title">MultiMotion: Multi Subject Video Motion Transfer via Video Diffusion Transformer.</span> AAAI, 2026.</li>
+        <li id="ref-9">Alexander Pondaven, Aliaksandr Siarohin, Sergey Tulyakov, Philip Torr, and Fabio Pizzati. <span class="mg-ref-title">Video Motion Transfer with Diffusion Transformers.</span> CVPR, 2025.</li>
+      </ol>
+  </div>
+</section>
+
+<section class="section mg-section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="mg-heading">BibTeX</h2>
+    <div class="mg-bibtex">
+      <button class="button is-rounded mg-button mg-copy" type="button" data-copy="mg-bibtex-code">Copy</button>
+      <pre><code id="mg-bibtex-code"><span class="mg-bib-line"><b>@inproceedings</b>{teodoro2026motiongrounder,</span><span class="mg-bib-line mg-bib-field">    <b>title</b>={<span class="mg-name"><span class="mg-green">Motion</span><span class="mg-blue">Grounder</span></span>: Grounded Multi-Object Motion Transfer via Diffusion Transformer},</span><span class="mg-bib-line mg-bib-field">    <b>author</b>={Samuel Teodoro and Yun Chen and Agus Gunawan and Soo Ye Kim and Jihyong Oh and Munchurl Kim},</span><span class="mg-bib-line mg-bib-field">    <b>booktitle</b>={Advances in Neural Information Processing Systems (NeurIPS)},</span><span class="mg-bib-line mg-bib-field">    <b>year</b>={2026}</span><span class="mg-bib-line">}</span></code></pre>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
